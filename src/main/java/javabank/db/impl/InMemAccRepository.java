@@ -3,7 +3,9 @@ package javabank.db.impl;
 import javabank.db.AccRepository;
 import javabank.model.Account;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class InMemAccRepository implements AccRepository {
@@ -45,5 +47,10 @@ public class InMemAccRepository implements AccRepository {
     @Override
     public void save(Account account) {
         accMap.put(account.getAccId(), account);
+    }
+
+    @Override
+    public List<Account> getAllAccounts() {
+        return new ArrayList<>(accMap.values());
     }
 }

@@ -4,6 +4,8 @@ import javabank.db.AccRepository;
 import javabank.model.Account;
 import javabank.model.exception.InsufficientFoundsException;
 
+import java.util.List;
+
 public class AccountService {
 
     private AccRepository accRepository;
@@ -58,6 +60,9 @@ public class AccountService {
 
     }
 
+    public List<Account> getAccounts() {
+        return accRepository.getAllAccounts();
+    }
 }
 
 
